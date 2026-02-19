@@ -54,7 +54,6 @@ function getCookies() {
     }
     else {
         cookiearray = document.cookie.split(';')
-        // const tasks = JSON.parse(cookiearray[1].split('=')[1]);
         for(var i = 0; i < cookiearray.length; i++)
         {
             if(cookiearray[i].split('=')[0].trim() == "Tasks") {
@@ -112,13 +111,13 @@ async function editTask(id) {
                 // console.log(tasks[i])
                 var title = tasks[i].title
                 await Swal.fire({
-                    title: `Update "${title}"`,
+                    title: `Edita "${title}"`,
                     position: 'center',
                     showCancelButton: true,
                     input: 'text',
                     inputValidator: (value) => {
                         if (!value) {
-                            return 'Blank input not accepted!'
+                            return 'Necesitas escribir algo para actualizar!'
                         }
                     },
                     preConfirm: (updateTask) => {
@@ -127,7 +126,7 @@ async function editTask(id) {
                         Swal.fire({
                             toast: true,
                             icon: "success",
-                            title: "item updated successfully!",
+                            title: "Tarea actualizada exitosamente!",
                             position: 'top',
                             showConfirmButton: false,
                             timer: 1500,
@@ -155,7 +154,7 @@ function removeTask(id) {
         Swal.fire({
             toast: true,
             icon: "success",
-            title: "item deleted successfully!",
+            title: "Tarea eliminada exitosamente!",
             position: 'top',
             showConfirmButton: false,
             timer: 1500,
@@ -182,7 +181,7 @@ function removeAllTasks() {
         Swal.fire({
             toast: true,
             icon: "info",
-            title: "No items yet!",
+            title: "No hay tareas para eliminar!",
             position: 'top',
             showConfirmButton: false,
             timer: 1500,
@@ -193,7 +192,7 @@ function removeAllTasks() {
         Swal.fire({
             toast: true,
             icon: "success",
-            title: "List cleared!",
+            title: "Todas las tareas han sido eliminadas exitosamente!",
             position: 'top',
             showConfirmButton: false,
             timer: 1500,
@@ -208,12 +207,12 @@ async function loadname() {
     if(document.cookie.indexOf(name_variable_name) == -1) {
         // var name = window.prompt("Enter your name!")
         await Swal.fire({
-            title: 'Enter your Name!',
+            title: 'Introduce tu nombre!',
             position: 'top',
             input: 'text',
             inputValidator: (value) => {
                 if (!value) {
-                    return 'You need to enter your name!'
+                    return 'Necesitas escribir algo para continuar!'
                 }
             },
             preConfirm: (name) => {
@@ -223,7 +222,7 @@ async function loadname() {
                     document.getElementById("username").innerHTML = getName()
                     Swal.fire({
                         icon: "success",
-                        title: `Hello, ${name}`
+                        title: `Hola, ${name}`
                     })
                     updateUI()
                 }
@@ -239,7 +238,7 @@ async function loadname() {
         Swal.fire({
             toast: true,
             icon: "success",
-            title: `Welcome back ${getName()}!`,
+            title: `Bienvenido de vuelta ${getName()}!`,
             position: 'top-end',
             showConfirmButton: false,
             timer: 3000,
@@ -258,13 +257,13 @@ function deleteAllCookies() {
 
 async function updatename() {
     await Swal.fire({
-        title: 'Update your Name!',
+        title: 'Actualiza tu nombre',
         position: 'top',
         showCancelButton: true,
         input: 'text',
         inputValidator: (value) => {
             if (!value) {
-                return 'You need to enter your name!'
+                return 'Necesitas escribir algo para continuar!'
             }
         },
         preConfirm: (newName) => {
@@ -276,7 +275,7 @@ async function updatename() {
                 Swal.fire({
                     toast: true,
                     icon: "success",
-                    title: "Username updated succesfully!",
+                    title: "Nombre actualizado exitosamente!",
                     position: 'top-end',
                     showConfirmButton: false,
                     timer: 3000,
