@@ -17,7 +17,6 @@ Una lista de tareas simple e interactiva creada con HTML, CSS y JavaScript. ¡Co
 * SweetAlert2
 
 ### Demo de la aplicación:
-
-...
+https://to-do-list-angel.netlify.app/
 
 ¡Gracias!
