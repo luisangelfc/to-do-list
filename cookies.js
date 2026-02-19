@@ -5,28 +5,21 @@ function updateUI()
 
         document.getElementById("list").innerHTML = ""
         tasks.map(task => {
-            // task create
+        
             var li = document.createElement("li");
             var value = task.title;
             var t = document.createTextNode(value);
             li.appendChild(t);
 
-            // update ui list
-            document.getElementById("list").appendChild(li);
+                        document.getElementById("list").appendChild(li);
             li.addEventListener('click', function(ev) {
                 if (ev.target.tagName === 'LI') {
-                    // console.log("triggering",task.id)
                     toggleTask(task.id)
                 }
             }, false);
             if(task.status) {
                 li.classList.toggle('checked');
             }
-            // li.onclick=()=>{
-            //     updateTask(task.id)
-            // }
-            
-            // edit task button
             var span1 = document.createElement("SPAN");
             var txt1 = document.createTextNode("✎");
             span1.className = "edit";
